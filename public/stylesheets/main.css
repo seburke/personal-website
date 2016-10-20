@@ -86,16 +86,14 @@ body {
 }
 
 .contact-list {
-    height: 35px;
-}
-
-.link-icons-container ul {
     margin: 0px;
     padding: 0px;
     list-style: none;
+    height: 3%;
 }
 
-.link-icons-container li {
+
+.contact-list li {
     display: inline;
     padding: 4%;
 }
@@ -105,6 +103,8 @@ body {
 }
 
 .icon-img {
+    display: block;
+    margin: auto;
     height: 100%;
     width: auto;
     -webkit-filter: grayscale(100%) opacity(80%); /* Safari 6.0 - 9.0 */
