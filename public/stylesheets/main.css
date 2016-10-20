@@ -70,10 +70,12 @@ body {
 }
 
 .left-side {
+    float: left;
     width: 50%;
 }
 
 .right-side {
+    float: right;
     width: 50%;
 
 }
@@ -113,7 +115,7 @@ body {
 
 #contact-text {
     color: #D3D3D3;
-    font-size: 2em;
+    font-size: 2.3vw;
     font-family: "Arial Narrow", Arial, sans-serif;
     vertical-align: top;
 
@@ -121,4 +123,31 @@ body {
 
 .resume {
     position:absolute; left: 0; right: 0; bottom: 0; top: 0px;
+}
+
+.profile-img {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+    height: auto;
+    -webkit-filter: brightness(75%) opacity(80%); /* Safari 6.0 - 9.0 */
+    filter: brightness(75%) opacity(80%);
+    border-radius: 8px;
+
+}
+
+.blurb {
+/*
+    margin-top: 25px;
+    margin-right: 70px;
+    margin-bottom: 200px;
+    margin-left: 70px;*/
+    width: 80%;
+    margin: auto;
+    padding-bottom: 30%;
+    color: #D3D3D3;
+    font-size: 4vw;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    vertical-align: top;
+
 }
