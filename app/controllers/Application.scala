@@ -9,5 +9,9 @@ object Application extends Controller {
     Ok(views.html.home())
   }
 
+  def resume = Action {
+    Ok(views.html.resume())
+  }
+
 
 }
