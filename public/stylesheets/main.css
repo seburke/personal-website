@@ -246,3 +246,38 @@ body {
     width: 420px;
 
 }
+
+.thesis-description {
+    color: #D3D3D3;
+    margin-top: 0%;
+    padding-top: 0%;
+    margin-left: 4%;
+
+}
+
+.thesis-description h1 {
+    vertical-align: text-top;
+    font-size: 2.8vw;
+    margin-top: 0px;
+
+}
+
+.thesis-description p {
+    font-size: 1.2vw;
+}
+
+.thesis-description li {
+    font-size: 1.2vw;
+}
+
+
+.left-side-thesis {
+    float: left;
+    width: 60%;
+}
+
+.right-side-thesis {
+    float: right;
+    width: 40%;
+
+}

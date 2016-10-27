@@ -23,10 +23,48 @@
     </div>
 
     <div class="split">
-        <div> <!-- The left side which will be text describing the thesis -->
+        <div class="left-side-thesis"> <!-- The left side which will be text describing the thesis -->
+            <div class="thesis-description">
+                <h1>Methods and Results</h1>
+                <p>The reactive trajectory algorithm uses an incremental adjustment approach that can make minor adjustments in response to collisions or goal changes.
+                The two biggest contributions from this algorithm are the reaction vector computation, and the pose adjustment algorithm.
+                <br>
+                The general algorithm is as follows: </p>
+                <ol>
+                    <li>Start with a planned trajectory, which is essentially a sequence of poses
+                        <ul>
+                            <li>A pose is simply a set of joint angles for the robot</li>
+                        </ul>
+                    </li>
+                    <li>Then loop through all poses and check for a collision or if the goal region has changed</li>
+                    <li>If there is no collision or goal region change, execute the next pose, and repeat step 2</li>
+                    <li>If there is a collision or goal change make an adjustment to try and resolve the collision
+                        <ul><li>Either the robot can resolve the collision and you’ll continue from step 2. Or the robot can’t resolve the collision, and you will abort back to the planning in step 1</li></ul>
+                    </li>
+                </ol>
+                <p><br>To make a collision adjustment, the following algorithm is used:<p>
+                <ol>
+                    <li>Find all poses in collision</li>
+                    <li>Compute a reaction vector for the first, middle and end pose of the collision
+                        <ul><li>A reaction vector is a vector of the direction the robot should move in to avoid the collision</li></ul>
+                    </li>
+                    <li>Interpolate reaction vectors for the rest of the poses in collision</li>
+                    <li>For each collision pose, adjust based on the reaction vector
+                        <ul><li>To do this, a quadratic program is used that will move the robot in the direction of the reaction vector based on joint angles while minimizing the distance the end-effector moves from it’s original position</li>
+                        <li>This will make several very minor adjustments until the pose is no longer in collision</li></ul>
+                    </li>
+                    <li>Continue execution with the new poses that are no longer in collision</li>
+                </ol>
+                <p><br>The goal adjustment is very similar to the collision adjustment, but rather than adjusting multiple pose, only the goal pose is adjusted and the rest are interpolated from the new pose and previous poses.
+This gives a general idea of how the robot will execute a plan and make adjustments.
+<br><br>
+The reactive trajectory algorithm was developed and tested in C++ with the OpenRAVE robotic simulation environment. The videos to the right were recorded from OpenRAVE and show two of the sample scenarios. The goal of the algorithm was to not only make correct adjustments, but also be significantly faster than traditional planning. The speed of the algorithm was compared with Bidirectional RRT (BiRRT), a commonly used planning algorithm. While BiRRT usually took 1.5-3 seconds, the reactive trajectory adjustment algorithm always took about a quarter of a second. This is significant not only because it is much faster, but is also far more consistent. Most of the scenarios tested were rather simple, whereas a complex scenario may take minutes to create a plan with BiRRT, and each re-plan will take the same. Whereas with the reactive trajectory adjustment algorithm, each re-plan should still be on the order of a quarter of a second assuming the adjustments needed are relatively small.
+<br><br>
+For a more detailed explanation of the algorithm, and results, please refer to my thesis linked above through MIT. </p>
 
+            </div>
         </div>
-        <div class="right-side"> <!-- The right side should contain two videos embedded. Should also have a small caption.-->
+        <div class="right-side-thesis"> <!-- The right side should contain two videos embedded. Should also have a small caption.-->
             <div class="video-container">
                 <iframe class="thesis-video"
                     src="https://www.youtube.com/embed/nlYqTM8vxU4?rel=0">
