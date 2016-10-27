@@ -151,20 +151,98 @@ body {
 
 }
 
-#pattern-link {
+.projects-container {
+    text-align: center;
+     padding: 50px;
+     width: 100%;
+ }
+
+
+.project-block {
+    text-align: center;
+    display: inline-block;
+    border-style: solid;
+    border-color: #BBB;
+    border-width: medium;
+    height 100%;
+    width 100%;
+    margin: 0px;
+    max-width: 280px;
+    padding: 0px;
+    padding-top: 0px;
+    border-radius: 5px;
+}
+
+.project-block:hover {
+    text-decoration: none;
+}
+
+.project-block h1 {
+    margin-top: 0px;
+    font-size: 2vw;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    color: #00CED1;
+    vertical-align: text-top;
+}
+
+.projects-image {
+    height: auto;
+    width: 100%;
+    padding-top: 10%;
+    -webkit-filter: grayscale(60%) opacity(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(60%) opacity(100%);
+
+}
+
+.thesis-title {
+    color: #00CED1;
+    font-size: 3em;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    text-decoration: none;
+}
+
+.text-link {
     color: #00CED1;
 }
 
 
-#pattern-link:hover {
+.text-link:hover {
     color: #00CED1;
     text-decoration: none;
 }
 
-.tkt {
-    padding-left: 50px;
-    color: #00CED1;
-    font-size: 6em;
-    font-family: Impact, Charcoal, sans-serif;
-    text-decoration: none;
+.project-blurb {
+    width: 88%;
+    margin: auto;
+    padding-top: 4%;
+    padding-bottom: 3%;
+    color: #D3D3D3;
+    font-size: 1.6vw;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    vertical-align: top;
+}
+
+.thesis-video {
+    display: block;
+    margin: auto;
+    width: 420px;
+    height: 315px
+}
+
+
+.video-container {
+    text-align: center;
+}
+
+.video-container p {
+    display: inline-block;
+    text-align: left;
+    padding-top: 2%;
+    padding-bottom: 4%;
+    color: #D3D3D3;
+    font-size: 1.3vw;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    vertical-align: top;
+    width: 420px;
+
 }
